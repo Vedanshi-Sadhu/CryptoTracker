@@ -1,0 +1,214 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #444;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+header {
+    background-color: #89CFF0; /* Light pastel blue */
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 60px; /* Reduced height */
+}
+
+header h1 {
+    font-size: 2rem; /* Reduced font size */
+    font-weight: 600;
+    margin: 0;
+}
+
+footer {
+    background-color: #89CFF0; /* Light pastel blue */
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    height: 50px; /* Reduced height */
+}
+
+main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Preferences Section */
+.preferences-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.preferences-section select, .preferences-section button {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.preferences-section button {
+    background-color: #6DC6E6; /* Soft light blue */
+    color: white;
+    border: none;
+}
+
+.preferences-section button:hover {
+    background-color: #4FA3D1;
+}
+
+/* Crypto List Section */
+#cryptocurrency-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.crypto-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.crypto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.crypto-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.crypto-card p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Text Color for Price and 24h Change in Dark Mode */
+.crypto-card .crypto-price,
+.crypto-card .crypto-change {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+/* Arrow Styles for Price Change */
+.arrow {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.price-up {
+    fill: #28a745; /* Green for price increase */
+    transform: rotate(0deg);
+}
+
+.price-down {
+    fill: #dc3545; /* Red for price decrease */
+    transform: rotate(180deg); /* Flip the arrow */
+}
+
+body.dark-theme .crypto-card .crypto-price,
+body.dark-theme .crypto-card .crypto-change {
+    color: #FFD700; /* Gold color for better visibility */
+}
+
+.crypto-card button {
+    background-color: #6DC6E6; /* Soft light blue */
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.crypto-card button:hover {
+    background-color: #4FA3D1; /* Slightly darker blue */
+}
+
+.favorite-button {
+    background-color: #FF7B7B; /* Soft coral red */
+}
+
+.favorite-button:hover {
+    background-color: #FF4D4D; /* Darker red */
+}
+
+/* Comparison Section */
+#comparison-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.comparison-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.comparison-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.comparison-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.comparison-card p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.comparison-card button {
+    background-color: #FF7B7B; /* Soft coral red */
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comparison-card button:hover {
+    background-color: #FF4D4D; /* Darker red */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem; /* Reduced header size */
+    }
+
+    .crypto-card, .comparison-card {
+        padding: 15px;
+    }
+}
