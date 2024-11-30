@@ -1,16 +1,13 @@
-// Fetch cryptocurrency data from CoinGecko API
 const apiURL = 'https://api.coingecko.com/api/v3/coins/markets';
 const cryptocurrenciesList = document.getElementById('cryptocurrency-list');
 const comparisonList = document.getElementById('comparison-section');
-let selectedCryptosForComparison = JSON.parse(localStorage.getItem('selectedCryptosForComparison')) || []; // Retrieve from localStorage
-let selectedSortOption = localStorage.getItem('selectedSortOption') || 'price'; // Retrieve sorting option from localStorage
+let selectedCryptosForComparison = JSON.parse(localStorage.getItem('selectedCryptosForComparison')) || [];
+let selectedSortOption = localStorage.getItem('selectedSortOption') || 'price'; 
 
-// Apply dark mode preference from localStorage
 if (localStorage.getItem('darkModeEnabled') === 'true') {
     document.body.classList.add('dark-theme');
 }
 
-// Fetch function to retrieve cryptocurrencies data
 async function fetchCryptocurrencyData() {
     try {
         const response = await fetch(`${apiURL}?vs_currency=usd&order=${selectedSortOption}_desc&per_page=10&page=1`);
@@ -21,9 +18,8 @@ async function fetchCryptocurrencyData() {
     }
 }
 
-// Display the cryptocurrency list
 function displayCryptocurrencyData(cryptos) {
-    cryptocurrenciesList.innerHTML = ''; // Clear existing content
+    cryptocurrenciesList.innerHTML = '';
     cryptos.forEach(crypto => {
         const cryptoCard = document.createElement('div');
         cryptoCard.classList.add('crypto-card');
@@ -43,7 +39,6 @@ function displayCryptocurrencyData(cryptos) {
     });
 }
 
-// Add selected cryptocurrency to comparison
 function addCryptoToComparison(cryptoId, name, symbol, price, change, marketCap) {
     if (selectedCryptosForComparison.length >= 5) {
         alert('You can only compare up to 5 cryptocurrencies.');
@@ -70,29 +65,25 @@ function addCryptoToComparison(cryptoId, name, symbol, price, change, marketCap)
     comparisonList.appendChild(comparisonCard);
 }
 
-// Remove cryptocurrency from comparison
 function removeCryptoFromComparison(cryptoId) {
     const comparisonCard = document.getElementById(`crypto-${cryptoId}`);
     if (comparisonCard) {
         comparisonList.removeChild(comparisonCard);
-        selectedCryptosForComparison = selectedCryptosForComparison.filter(id => id !== cryptoId); // Remove from the array
-        localStorage.setItem('selectedCryptosForComparison', JSON.stringify(selectedCryptosForComparison)); // Save updated list
+        selectedCryptosForComparison = selectedCryptosForComparison.filter(id => id !== cryptoId); 
+        localStorage.setItem('selectedCryptosForComparison', JSON.stringify(selectedCryptosForComparison)); 
     }
 }
 
-// Toggle Dark Mode
 function toggleDarkMode() {
     document.body.classList.toggle('dark-theme');
     const darkModeEnabled = document.body.classList.contains('dark-theme');
-    localStorage.setItem('darkModeEnabled', darkModeEnabled); // Save dark mode preference to localStorage
+    localStorage.setItem('darkModeEnabled', darkModeEnabled); 
 }
 
-// Change Sorting Options
 document.getElementById('sort-cryptos').addEventListener('change', function() {
     selectedSortOption = this.value;
-    localStorage.setItem('selectedSortOption', selectedSortOption); // Save sorting option to localStorage
+    localStorage.setItem('selectedSortOption', selectedSortOption); 
     fetchCryptocurrencyData();
 });
 
-// Load the initial data when the page loads
 window.onload = fetchCryptocurrencyData;

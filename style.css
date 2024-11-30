@@ -1,4 +1,3 @@
-/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -15,23 +14,23 @@ body.dark-theme {
 }
 
 header {
-    background-color: #89CFF0; /* Light pastel blue */
+    background-color: #89CFF0;
     color: #333;
     padding: 10px;
     text-align: center;
     border-radius: 0 0 15px 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    height: 60px; /* Reduced height */
+    height: 60px; 
 }
 
 header h1 {
-    font-size: 2rem; /* Reduced font size */
+    font-size: 2rem;
     font-weight: 600;
     margin: 0;
 }
 
 footer {
-    background-color: #89CFF0; /* Light pastel blue */
+    background-color: #89CFF0;
     color: #333;
     text-align: center;
     padding: 10px;
@@ -39,7 +38,7 @@ footer {
     bottom: 0;
     width: 100%;
     border-radius: 15px 15px 0 0;
-    height: 50px; /* Reduced height */
+    height: 50px;
 }
 
 main {
@@ -48,7 +47,6 @@ main {
     margin: 0 auto;
 }
 
-/* Preferences Section */
 .preferences-section {
     display: flex;
     justify-content: space-between;
@@ -64,7 +62,7 @@ main {
 }
 
 .preferences-section button {
-    background-color: #6DC6E6; /* Soft light blue */
+    background-color: #6DC6E6;
     color: white;
     border: none;
 }
@@ -73,7 +71,6 @@ main {
     background-color: #4FA3D1;
 }
 
-/* Crypto List Section */
 #cryptocurrency-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -104,7 +101,6 @@ main {
     margin-bottom: 10px;
 }
 
-/* Text Color for Price and 24h Change in Dark Mode */
 .crypto-card .crypto-price,
 .crypto-card .crypto-change {
     font-weight: bold;
@@ -112,7 +108,6 @@ main {
     align-items: center;
 }
 
-/* Arrow Styles for Price Change */
 .arrow {
     width: 20px;
     height: 20px;
@@ -121,22 +116,22 @@ main {
 }
 
 .price-up {
-    fill: #28a745; /* Green for price increase */
+    fill: #28a745;
     transform: rotate(0deg);
 }
 
 .price-down {
-    fill: #dc3545; /* Red for price decrease */
-    transform: rotate(180deg); /* Flip the arrow */
+    fill: #dc3545; 
+    transform: rotate(180deg); 
 }
 
 body.dark-theme .crypto-card .crypto-price,
 body.dark-theme .crypto-card .crypto-change {
-    color: #FFD700; /* Gold color for better visibility */
+    color: #0b0a00; 
 }
 
 .crypto-card button {
-    background-color: #6DC6E6; /* Soft light blue */
+    background-color: #6DC6E6; 
     color: white;
     border: none;
     padding: 8px 20px;
@@ -146,18 +141,17 @@ body.dark-theme .crypto-card .crypto-change {
 }
 
 .crypto-card button:hover {
-    background-color: #4FA3D1; /* Slightly darker blue */
+    background-color: #4FA3D1;
 }
 
 .favorite-button {
-    background-color: #FF7B7B; /* Soft coral red */
+    background-color: #FF7B7B;
 }
 
 .favorite-button:hover {
-    background-color: #FF4D4D; /* Darker red */
+    background-color: #FF4D4D; 
 }
 
-/* Comparison Section */
 #comparison-section {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -189,7 +183,7 @@ body.dark-theme .crypto-card .crypto-change {
 }
 
 .comparison-card button {
-    background-color: #FF7B7B; /* Soft coral red */
+    background-color: #FF7B7B;
     color: white;
     border: none;
     padding: 8px 20px;
@@ -199,13 +193,12 @@ body.dark-theme .crypto-card .crypto-change {
 }
 
 .comparison-card button:hover {
-    background-color: #FF4D4D; /* Darker red */
+    background-color: #FF4D4D;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 1.8rem; /* Reduced header size */
+        font-size: 1.8rem;
     }
 
     .crypto-card, .comparison-card {
